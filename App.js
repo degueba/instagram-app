@@ -12,8 +12,11 @@ const RootStack = createStackNavigator(
     Login: Login
   },
   {
-    initialRouteName: 'Login'
-  }
+    initialRouteName: 'Login',
+    headerMode: 'none',
+    cardStyle: { backgroundColor: '#ffffff' }
+  },
+
 )
 
 export default class App extends React.Component {

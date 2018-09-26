@@ -7,7 +7,7 @@ import { StyleSheet,
 				 TextInput, 
 				 Button, 
 				 AsyncStorage} from 'react-native';
-				 
+
 import { createStackNavigator } from 'react-navigation';
 
 
@@ -20,14 +20,15 @@ const width = Dimensions.get('screen').width;
 type Props = {};
 
 export default class Login extends Component<Props> {
+
 	constructor(props) {
-	  super(props);
+		super(props);
 	
-	  this.state = {
-	  	usuario: '',
-	  	senha: '',
-	  	mensagem: ''
-	  };
+		this.state = {
+			usuario: '',
+			senha: '',
+			mensagem: ''
+		};
 	}
 
 	efetuaLogin() {
@@ -51,7 +52,7 @@ export default class Login extends Component<Props> {
 				throw new Error("Não foi possível efetuar o login!");
 			})
 			.then(token => {
-				const { navigate } = this.props.navigation;
+				const { push } = this.props.navigation;
 
 				//AsyncStorage.setItem('token', token);
 				//AsyncStorage.setItem('usuario', this.state.usuario);
@@ -61,7 +62,7 @@ export default class Login extends Component<Props> {
 				]);
 
 				/// GO TO FEED PAGE
-				navigate('Home')
+				push('Home')
 			})
 			.catch(e => this.setState({mensagem: e.message}))
 	}

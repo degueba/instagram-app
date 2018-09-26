@@ -5,7 +5,7 @@ import Post from './Post';
 const screen = Dimensions.get('screen').width;
 type Props = {};
 
-export default class Feed extends Component<Props> {
+export default class Feed extends React.Component {
 
   constructor() {
     super();
