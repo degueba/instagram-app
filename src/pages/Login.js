@@ -31,6 +31,15 @@ export default class Login extends Component<Props> {
 		};
 	}
 
+	async _storeData(key) {
+	  try {
+			await AsyncStorage.multiSet(key);
+	  } catch (error) {
+		// Error saving data
+		console.warn('error: ', error)
+	  }
+	}
+
 	efetuaLogin() {
 		const uri = 'http://instalura-api.herokuapp.com/api/public/login'; 
 		const requestInfo = {
@@ -52,17 +61,17 @@ export default class Login extends Component<Props> {
 				throw new Error("Não foi possível efetuar o login!");
 			})
 			.then(token => {
-				const { push } = this.props.navigation;
+				const { push, replace } = this.props.navigation;
 
-				//AsyncStorage.setItem('token', token);
-				//AsyncStorage.setItem('usuario', this.state.usuario);
-				AsyncStorage.multiSet([
+				this._storeData(
+				[
 					['token', token],
 					['usuario', this.state.usuario]
-				]);
+				])
+
 
 				/// GO TO FEED PAGE
-				push('Home')
+				replace('Home')
 			})
 			.catch(e => this.setState({mensagem: e.message}))
 	}

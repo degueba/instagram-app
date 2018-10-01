@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
 import {
     Platform, 
@@ -57,7 +49,7 @@ export default class Post extends Component<Props> {
     const { foto, likeCallback, comentarioCallback } = this.props;
 
     return ( 
-      <View>
+      <View style={styles.container}>
         <View style={styles.profileView}>
           <Image 
             style={styles.profileImage}
@@ -88,6 +80,9 @@ export default class Post extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    margin: 15
+  },
   rodape: {
     margin: 10
   },
