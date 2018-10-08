@@ -8,8 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b2a948d8-bd7e-4aaf-b5a2-1237d6edda28" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Feed.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,8 +31,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane" />
     </panes>
@@ -142,7 +141,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24961598" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35560676" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />

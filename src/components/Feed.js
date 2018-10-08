@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, Dimensions, ScrollView, FlatList} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, Dimensions, ScrollView, FlatList, AsyncStorage} from 'react-native';
 import Post from './Post';
 
 const screen = Dimensions.get('screen').width;
@@ -15,8 +15,20 @@ export default class Feed extends React.Component {
   }
 
   componentDidMount() {
+    //const uri = 'http://instalura-api.herokuapp.com/api/public/fotos';
+    const uri = 'http://instalura-api.herokuapp.com/api/public/fotos/rafael';
 
-    fetch('http://instalura-api.herokuapp.com/api/public/fotos/rafael')
+    AsyncStorage.getItem('token')
+      .then(token => {
+
+        return {
+          headers: new Headers({
+            "X-AUTH-TOKEN": token
+          })
+        }
+
+      })
+      .then(requestInfo => fetch(uri, requestInfo))
       .then(resposta => resposta.json())
       .then(json => this.setState({fotos: json}))
       .catch(e => {
